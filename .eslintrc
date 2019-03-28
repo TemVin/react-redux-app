@@ -1,0 +1,20 @@
+{
+    "parser" : "babel-eslint",
+    "env" : {
+      "node" : true,
+      "browser": true,
+      "es6" : true
+    },
+    "extends": "airbnb",
+    "plugins": ["jsx-a11y"],
+    "rules": {
+      "react/require-default-props": "off",
+      "import/prefer-default-export": "off",
+      "import/no-unresolved": "off",
+      "no-underscore-dangle": [0],
+      "react/forbid-prop-types": ["enabled", { "forbid": ["string"], "checkContextTypes": "boolean", "checkChildContextTypes": "boolean" }]
+    },
+    "globals": {
+      "__DEV__": true
+    }
+}
