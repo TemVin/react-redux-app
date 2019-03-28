@@ -32,9 +32,12 @@ export const itemsFetchResults = country => (
     dispatch(changeFilter(country));
     axios.get(`${url}${country}`)
       .then((items) => {
-        dispatch(itemsFetchResultsSuccess(items.data));
         dispatch(itemsIsLoading(false));
+        dispatch(itemsFetchResultsSuccess(items.data));
       })
-      .catch(() => dispatch(itemsFetchResultsFailed()));
+      .catch(() => {
+        dispatch(itemsIsLoading(false));
+        dispatch(itemsFetchResultsFailed());
+      });
   }
 );

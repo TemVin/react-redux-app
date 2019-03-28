@@ -7,7 +7,7 @@ import SearchInput from '_components/SearchInput/SearchInput';
 import Image from '_components/Image/Image';
 
 
-import spinner from '../../img/spinner.gif';
+import spinner from '../../img/loading.gif';
 
 class SearchContainer extends PureComponent {
   handleChangeFilter = (e) => {
@@ -25,12 +25,11 @@ class SearchContainer extends PureComponent {
     return (
       <Fragment>
         <SearchInput
+          defaultValue={filter}
           placeholder="search..."
           onChange={this.handleChangeFilter}
-          defaultValue={filter}
         />
-
-        { loading && <Image src={spinner} alt="spinner" /> }
+        { loading && <Image className="spinner" url={spinner} alt="spinner" /> }
       </Fragment>
     );
   }
@@ -43,8 +42,8 @@ SearchContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  filter: state.filter,
-  loading: state.IsLoading,
+  filter: state.itemsFetchResults.filter,
+  loading: state.itemsFetchResults.loading,
 });
 
 const mapDispatchProps = dispatch => ({

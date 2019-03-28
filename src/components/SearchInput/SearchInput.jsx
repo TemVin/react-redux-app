@@ -7,7 +7,8 @@ import styles from './SearchInput.less';
 
 class SearchInput extends PureComponent {
   render() {
-    const { onChange, value } = this.props;
+    const { onChange, defaultValue, placeholder } = this.props;
+
     return (
       <Fragment>
         <Form>
@@ -17,8 +18,9 @@ class SearchInput extends PureComponent {
             </Form.Label>
             <Form.Control
               className="input"
+              defaultValue={defaultValue}
+              placeholder={placeholder}
               onChange={onChange}
-              defaultValue={value}
             />
           </Form.Group>
         </Form>
@@ -29,7 +31,8 @@ class SearchInput extends PureComponent {
 
 SearchInput.propTypes = {
   onChange: PropTypes.func,
-  value: PropTypes.string,
+  defaultValue: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 export default CSSModules(SearchInput, styles);
