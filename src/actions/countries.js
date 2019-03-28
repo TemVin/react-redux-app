@@ -12,9 +12,9 @@ export const changeFilter = filter => ({
   filter,
 });
 
-export const itemsIsLoading = bool => ({
+export const itemsIsLoading = value => ({
   type: ITEMS_LOADING,
-  isLoading: bool,
+  isLoading: value,
 });
 
 export const itemsFetchResultsSuccess = items => ({

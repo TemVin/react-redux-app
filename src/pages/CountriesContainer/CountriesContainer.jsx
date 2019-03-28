@@ -32,7 +32,6 @@ class CountriesContainer extends PureComponent {
 }
 
 CountriesContainer.propTypes = {
-  loading: PropTypes.bool,
   countries: PropTypes.array,
   searchCountries: PropTypes.string,
 };
